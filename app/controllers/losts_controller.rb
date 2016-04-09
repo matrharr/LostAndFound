@@ -1,11 +1,11 @@
 class LostsController < ApplicationController
 
   def index
-    @lost_items = lost.all
+    @lost_items = Lost.all
   end
 
   def show
-    @lost_item = lost.find()
+    @lost_item = Lost.find()
   end
 
   def lost_search
@@ -19,7 +19,7 @@ class LostsController < ApplicationController
   end
 
   def create
-    @lost_item = lost.new(lost_params)
+    @lost_item = Lost.new(lost_params)
   end
 
   private
