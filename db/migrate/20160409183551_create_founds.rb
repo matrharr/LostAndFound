@@ -9,7 +9,7 @@ class CreateFounds < ActiveRecord::Migration
       t.string :color
       t.string :description
       t.string :location
-      t.string :photo
+      t.string :picture
 
       t.timestamps null: false
     end
