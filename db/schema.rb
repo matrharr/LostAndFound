@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409183551) do
+ActiveRecord::Schema.define(version: 20160409204030) do
 
   create_table "founds", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,8 +23,12 @@ ActiveRecord::Schema.define(version: 20160409183551) do
     t.string   "description"
     t.string   "location"
     t.string   "photo"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "losts", force: :cascade do |t|

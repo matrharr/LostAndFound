@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :lost
   resources :found
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'found#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
