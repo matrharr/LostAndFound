@@ -19,6 +19,7 @@ class FoundsController < ApplicationController
 
   def new
     #Form for new found item
+    @found = Found.new()
   end
 
   def create
