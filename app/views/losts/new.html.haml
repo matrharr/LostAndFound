@@ -1,22 +1,22 @@
 .container-fluid
   .row
     .col-sm-12
-      = link_to 'Back', admin_index_path, class: 'btn btn-success admin-buttons pull-right'
+      = link_to 'Back', losts_path, class: 'btn btn-success admin-buttons pull-right'
 .container
   .row
     .col-lg-12
-      = form_for @found, html: { class: 'form-horizontal center', id: 'found-form' } do |f|
+      = form_for @lost, html: { class: 'form-horizontal center', id: 'lost-form' } do |f|
         %img.macrabz-admin.center-block{:alt => 'Macrabz Emporium', :src => '/assets/amacrabz-f090c51c8aa06149fcc20cb1c563d771075b1e63998352663694b5c9bd55ffb4.svg'}
         %h1.text-center.edit-header
-          Add Found
+          Add Lost Item
         .form-center
           - if flash[:error]
             #flash.error.text-center
               = flash[:error]
           .form-group
-            = f.label :image, 'Image url:', class: 'col-lg-4 control-label'
+            = f.label :picture, 'Photo:', class: 'col-lg-4 control-label'
             .col-md-8
-              = f.text_field :image, class: 'form-control'
+              = f.text_field :picture, class: 'form-control'
           .form-group
             = f.label :title, 'Title:', class: 'col-lg-4 control-label'
             .col-md-8
@@ -42,9 +42,10 @@
                   %p.multiSel
                 %ul.dropdown-menu{'aria-labelledby' => 'dropdownCategories'}
                   %ul.multiSelect{multiple: 'multiple'}
-                    - @colors.each do |color|
-                      %li
-                        %input{type: 'checkbox', value: category.id, name: 'category_ids[]'}
-                        = color.name
+                    %input{type: 'checkbox', value: 'orange'}
+          .form-group
+            = f.label :reward, 'Reward:', class: 'col-lg-4 control-label'
+            .col-md-8
+              = f.text_field :reward, class: 'form-control'
           .col-md-12.update-button
             = f.submit 'Add Found Item', class: 'btn btn-primary btn-lg center-block'

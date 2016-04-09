@@ -1,7 +1,7 @@
 .container-fluid
   .row
     .col-sm-12
-      = link_to 'Back', admin_index_path, class: 'btn btn-success admin-buttons pull-right'
+      = link_to 'Back', founds_path, class: 'btn btn-success admin-buttons pull-right'
 .container
   .row
     .col-lg-12
@@ -14,9 +14,9 @@
             #flash.error.text-center
               = flash[:error]
           .form-group
-            = f.label :image, 'Image url:', class: 'col-lg-4 control-label'
+            = f.label :picture, 'Picture url:', class: 'col-lg-4 control-label'
             .col-md-8
-              = f.text_field :image, class: 'form-control'
+              = f.text_field :picture, class: 'form-control'
           .form-group
             = f.label :title, 'Title:', class: 'col-lg-4 control-label'
             .col-md-8
@@ -42,13 +42,6 @@
                   %p.multiSel
                 %ul.dropdown-menu{'aria-labelledby' => 'dropdownCategories'}
                   %ul.multiSelect{multiple: 'multiple'}
-                    - @colors.each do |color|
-                      %li
-                        %input{type: 'checkbox', value: category.id, name: 'category_ids[]'}
-                        = color.name
-           .form-group
-            = f.label :reward, 'Reward:', class: 'col-lg-4 control-label'
-            .col-md-8
-              = f.text_field :reward, class: 'form-control'
+                    %input{type: 'checkbox', value: "yellow"}
           .col-md-12.update-button
             = f.submit 'Add Found Item', class: 'btn btn-primary btn-lg center-block'

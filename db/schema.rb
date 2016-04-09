@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160409183551) do
     t.string   "color"
     t.string   "description"
     t.string   "location"
-    t.string   "photo"
+    t.string   "picture"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

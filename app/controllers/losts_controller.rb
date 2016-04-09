@@ -15,6 +15,7 @@ class LostsController < ApplicationController
   end
 
   def new
+    @lost = Lost.new()
   end
 
   def create
