@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :users
-  resources :lost
-  resources :found
+  resources :losts
+  post '/lost_search', to: 'losts#lost_search'
+  resources :founds
+  post '/found_search', to: 'founds#found_search'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
