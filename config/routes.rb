@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :users
   resources :losts
-  post '/lost_search', to: 'losts#lost_search'
+    get 'losts/matches', to: 'losts#matches'
   resources :founds
-  post '/found_search', to: 'founds#found_search'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
