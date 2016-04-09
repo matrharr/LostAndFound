@@ -5,11 +5,11 @@ class CreateFounds < ActiveRecord::Migration
       t.string :title
       t.string :brand
       t.string :category
-      t.string :type
+      t.string :kind
       t.string :color
       t.string :description
       t.string :location
-      t.string :photo
+      t.string :picture
 
       t.timestamps null: false
     end

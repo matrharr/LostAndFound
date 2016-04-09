@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 20160409204030) do
     t.string   "title"
     t.string   "brand"
     t.string   "category"
-    t.string   "type"
+    t.string   "kind"
     t.string   "color"
     t.string   "description"
     t.string   "location"
+<<<<<<< HEAD
     t.string   "photo"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -29,6 +30,11 @@ ActiveRecord::Schema.define(version: 20160409204030) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+=======
+    t.string   "picture"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+>>>>>>> a9a1f9d01593b86f7446802fe4443ee434308ee8
   end
 
   create_table "losts", force: :cascade do |t|
@@ -36,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160409204030) do
     t.string   "title"
     t.string   "brand"
     t.string   "category"
-    t.string   "type"
+    t.string   "kind"
     t.string   "color"
     t.string   "description"
     t.integer  "reward"

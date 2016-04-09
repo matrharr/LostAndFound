@@ -1,0 +1,25 @@
+.container-fluid
+  .row
+    .col-sm-12
+      = link_to new_product_path, class: 'btn btn-success admin-buttons pull-right' do
+        %i.glyphicon.glyphicon-plus
+        %span Add Product
+.container
+  .row
+    .col-sm-12
+      = link_to image_tag('/assets/crabazon-f28845d00b5333dd7aee565e3d6881796a5c03a66e46a1ff13ba5dfb2cebdac1.svg'), index_path, class: 'macrabz-admin center-block'
+      %h1.text-center.index-header Your Inventory!
+      - if flash[:success]
+        #flash.success.text-center
+          = flash[:success]
+      %table.table.table-striped
+        %thead
+          %tr
+            %th
+            %th Picture
+            %th.text-center Description
+        %tbody
+          - @matches.each do |match|
+            %tr
+              %td.clickable-row.admin-image{'data-url' => "/products/#{match.id}"}= image_tag(match.picture)
+              %td.clickable-row{'data-url' => "/products/#{match.id}"}= match.description
