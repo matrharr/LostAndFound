@@ -4,12 +4,12 @@
       %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/lostit.png'}
       %br
       %br
-      %form
+      %form{action:"/founds/search_results"}
         .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
           .input-group
             %span.input-group-btn
               %button.btn.btn-default{:type => "button"} Help return someone's missing item!
-            %input.form-control{:placeholder => "Search for...", :type => "text"}
+            %input.form-control{:placeholder => "Search for...", :type => "text", name:"search"}
         %table#cart.table
           %thead
             %tr
