@@ -1,8 +1,9 @@
 
-
+title = [""]
 brands = ["Armani Exchange", "Burton", "Calvin Klein", "Guess", "Marc Jacobs"]
 kinds = ["Shirt", "Hat", "Jacket", "Sweater", "Gloves"]
 colors = ["red", "blue", "green", "black", "white"]
+
 
 
 30.times do
@@ -30,8 +31,52 @@ Found.create(
    location: "Folsom St"
   )
 
+Found.create(
+   user_id: (rand(1..50)),
+   title: "Found bag at airport",
+   brand: "Champion",
+   category: "Personal Items",
+   kind: "Travel Effects",
+   color: "Black",
+   description: "Small black bag with passports and credit cards.",
+   location: "Gate A20 SFO"
+  )
+
+Found.create(
+   user_id: (rand(1..50)),
+   title: "Found headphones",
+   brand: "Bose",
+   category: "Electronics",
+   kind: "Headphones",
+   color: "Black",
+   description: "Wireless noise canceling headphones.",
+   location: "Airplane SK0984 SFO"
+  )
+
+Found.create(
+   user_id: (rand(1..50)),
+   title: "Found an iphone",
+   brand: "Apple",
+   category: "Electronics",
+   kind: "Mobile phone",
+   color: "Gray",
+   description: "iphone 5s, gray and purple IS skincase.",
+   location: "Found at the Serramonte Mall"
+  )
+
+Found.create(
+   user_id: (rand(1..50)),
+   title: "Found sheep doll",
+   brand: "Sheep",
+   category: "Personal Items",
+   kind: "Toys",
+   color: "Beige",
+   description: "Small sheep, 5 inches long, off white(as much loved), large black eyes and beads as filler for feet, answers to the name Sheepie - distraught 8 year old girl wants him back.",
+   location: "Airplane SK0984 SFO"
+  )
+
 Lost.create(
-  title: Faker::Lorem.word,
+  title: "Lost my favorite jacket",
   brand: "Calvin Klein",
   category: "Clothing",
   kind: "Jacket",
