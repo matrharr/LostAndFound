@@ -1,3 +1,5 @@
+include ApplicationHelper
+
 class LostsController < ApplicationController
 
   def index
@@ -5,13 +7,15 @@ class LostsController < ApplicationController
   end
 
   def show
-    @lost_item = Lost.find()
-  end
+    lost_item = Lost.find(params[:id])
+    found_items = Found.all
 
-  def lost_search
-  end
-
-  def search_results
+    @matches = []
+    found_items.each do |found_item|
+      if get_str_cosine(lost_item.description, found_item.description) > 0.5
+        @matches << found_item
+      end
+    end
   end
 
   def new
