@@ -33,6 +33,6 @@ class FoundsController < ApplicationController
 
   private
   def found_params
-    params.require(:founds).permit(:user_id, :title, :brand, :category, :type, :color, :description, :location, :photo)
+    params.require(:founds).permit(:user_id, :title, :brand, :category, :kind, :color, :description, :location, :photo)
   end
 end

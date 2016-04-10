@@ -45,6 +45,6 @@ class LostsController < ApplicationController
 
   private
   def lost_params
-    params.require(:lost_item).permit(:user_id, :title, :brand, :category, :type, :color, :description, :location, :photo)
+    params.require(:lost_item).permit(:user_id, :title, :brand, :category, :kind, :color, :description, :location, :photo, :reward)
   end
 end
