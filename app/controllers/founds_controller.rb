@@ -4,6 +4,22 @@ class FoundsController < ApplicationController
     @found_items = Found.all
   end
 
+  def search_results
+
+    search = params[:search]
+    found_items = Found.all
+
+    @matches = {}
+
+    found_items.each do |item|
+        @matches[item] = get_str_cosine(search, item.description)
+      end
+
+      @matches = @matches.sort_by {|_key, value| value}.reverse
+
+  end
+
+
   def show
     @found_item = Found.find(params[:id])
   end
@@ -13,9 +29,6 @@ class FoundsController < ApplicationController
     @found_items = Found.where()
   end
 
-  def search_results
-    #Display Results
-  end
 
   def new
     #Form for new found item
