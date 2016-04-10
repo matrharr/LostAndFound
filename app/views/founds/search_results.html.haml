@@ -20,12 +20,12 @@
               %th.text-center Brand
               %th.text-center Date
           %tbody
-          - @score.each do |item, score|
+          - @matches.each do |item, score|
             %tr
               %td.text-center.admin-image= image_tag(item.photo)
               %td.text-center
                 %a{href:"/founds/#{item.id}"}= item.title
-              %td.text-center= score.round(2)
+                %td.text-center= score.round(2)
               %td.text-center= item.description
               %td.text-center= item.location
               %td.text-center= item.brand

@@ -6,8 +6,15 @@ class FoundController < ApplicationController
 
   end
 
+
+  def search_results
+    p params
+  end
+
   def show
-    @found = Found.find(params[:id])
+    @found = Found.find_by(params[:id])
+    p "8" * 100
+    p @found
   end
 
   def create
@@ -20,7 +27,7 @@ class FoundController < ApplicationController
   end
 
   private
-  
+
   def found_params
     params.require(:found).permit(:title, :description, :photo)
   end
