@@ -9,26 +9,38 @@
   %nav.navbar.navbar-default.navbar-fixed-top
     .container-fluid
       .navbar-header
-        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#main-nav", "data-toggle" => "collapse", type: "button"}
+        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => ".navbar-brand", "data-toggle" => "collapse", type: "button"}
           %span.sr-only Toggle navigation
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        = link_to image_tag(''), losts_path, class: 'navbar-brand'
+        = link_to image_tag('/assets/founditlogo2.png'), losts_path, class: 'navbar-brand'
       .collapse.navbar-collapse#main-nav
         %ul.nav.navbar-nav
           %li.dropdown
             %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              Product Categories
+              Lost
               %b.caret
+            
             %ul.dropdown-menu{ :role => 'menu'}
               %li
-                = link_to 'Lost', losts_path
-                = link_to 'Found', founds_path
-  %body{:onload => "sizeChange()"}
+                = link_to 'View all Lost Items', losts_path
+                = link_to 'Add a Lost Item', losts_path
+            / %ul.dropdown-menu{ :role => 'menu'}
+            /   %li
+            /     = link_to 'Lost', losts_path
+            /     = link_to 'Found', founds_path
+        = link_to image_tag('/assets/search2.png'), losts_path, class: 'navbar-search slideout-menu-toggle'
+  %body
     .container
       .row
         .col-sm-12
           %p.notice.text-center= notice
           %p.alert.text-center= alert
     = yield
+    .slideout-menu
+      %h3
+        .statisticstitle
+          Search
+
+    

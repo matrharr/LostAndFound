@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :users
   resources :losts
-    get 'losts/matches', to: 'losts#matches'
   resources :founds
 
   # You can have the root of your site routed with "root"

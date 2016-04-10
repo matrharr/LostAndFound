@@ -7,10 +7,10 @@
         %p.product-page-desc.text-center= @lost.color
         %p.product-page-desc.text-center= @lost.brand
         %p.product-page-desc.text-center= @lost.location
-        %button.btn.btn-primary.btn-lg.center-block.add-product-button{:id => "add_#{@product.id}"} Contact 
+        %button.btn.btn-primary.btn-lg.center-block.add-product-button{:id => "add_#{@product.id}"} Contact
       .col-lg-4
         %h1.product-page-price.text-right
-          %sup.product-dollar $ 
+          %sup.product-dollar $
           = number_with_precision(@product.reward, precision: 2)
         .product-page-image.push-right
           = image_tag(@product.product_image)
