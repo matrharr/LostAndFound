@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409204030) do
+ActiveRecord::Schema.define(version: 20160410000520) do
 
   create_table "founds", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,19 +22,13 @@ ActiveRecord::Schema.define(version: 20160409204030) do
     t.string   "color"
     t.string   "description"
     t.string   "location"
-<<<<<<< HEAD
-    t.string   "photo"
+    t.string   "picture"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-=======
-    t.string   "picture"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
->>>>>>> a9a1f9d01593b86f7446802fe4443ee434308ee8
   end
 
   create_table "losts", force: :cascade do |t|
@@ -48,8 +42,12 @@ ActiveRecord::Schema.define(version: 20160409204030) do
     t.integer  "reward"
     t.string   "picture"
     t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

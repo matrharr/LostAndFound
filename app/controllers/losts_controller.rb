@@ -20,10 +20,15 @@ class LostsController < ApplicationController
 
   def create
     @lost_item = Lost.new(lost_params)
+    if @lost_item.save
+      redirect_to losts_path
+    else
+
+    end
   end
 
   private
   def lost_params
-    params.require(:lost_item).permit(:user_id, :title,:brand, :category, :type, :color, :description, :location)
+    params.require(:lost_item).permit(:user_id, :title, :brand, :category, :type, :color, :description, :location, :photo)
   end
 end
