@@ -1,18 +1,29 @@
 .container
   .row
     .col-sm-12
-      %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/founditlogo2.png'}
-      %h1.text-center.index-header Lost Items
+      %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/lostit.png'}
+      %br
+      %br
       %form
+        .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
+          .input-group
+            %span.input-group-btn
+              %button.btn.btn-default{:type => "button"} Help return someone's missing item!
+            %input.form-control{:placeholder => "Search for...", :type => "text"}
         %table#cart.table
           %thead
             %tr
+              %br
+              %br
+              %br
+              %br
+              %th
               %th.text-center Picture
               %th.text-center Title
               %th.text-center Description
               %th.text-center Location
               %th.text-center Category
-              %th.text-center Kind
+              %th.text-center Type
               %th.text-center Color
               %th.text-center Brand
               %th.text-center Reward
@@ -28,4 +39,5 @@
               %td.text-center= item.color
               %td.text-center= item.brand
               %th.text-center.reward= item.reward
+      %br
 

@@ -1,21 +1,13 @@
 .container-fluid
-  .row
-    .col-sm-12
-      = link_to 'Back', founds_path, class: 'btn btn-success admin-buttons pull-right'
 .container
   .row
-    .col-lg-12
+    .col-lg-12.col-md-12
       = form_for :founds, html: { multipart: true, class: 'form-horizontal center', id: 'found-form' }, url: { action: "create"} do |f|
-        %h1.text-center.edit-header
-          Add Found Item
-        .form-center
-          - if flash[:error]
-            #flash.error.text-center
-              = flash[:error]
+        %img.macrabz-admin.center-block{:alt => 'foundit', :src => '/assets/founditlogo.png'}
           .form-group
             = f.label :photo, 'Picture:', class: 'col-lg-2 control-label'
             .col-md-8
-              = f.file_field :photo, class: 'col-lg-2 control-label'
+              = f.file_field :photo, class: 'col-lg-4 control-label'
           .form-group
             = f.label :title, 'Title:', class: 'col-lg-2 control-label'
             .col-md-8
@@ -46,3 +38,4 @@
               = f.text_field :brand, class: 'form-control'
           .col-md-12.update-button
             = f.submit 'Add Found Item', class: 'btn btn-primary btn-lg center-block'
+      %p

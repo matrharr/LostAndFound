@@ -25,4 +25,10 @@ $(document).on("page:change", function() {
             }, 280);    
       }
     });
+
+});
+
+
+$(document).ready(function() {
+    $(".dropdown-toggle").dropdown();
 });
