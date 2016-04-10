@@ -1,20 +1,43 @@
 .container
   .row
     .col-sm-12
-      %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/founditlogo2.png'}
-      %h1.text-center.index-header 
+      %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/lostit.png'}
+      %br
+      %br
       %form
         .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
           .input-group
             %span.input-group-btn
-              %button.btn.btn-default{:type => "button"} Let's Find It!
+              %button.btn.btn-default{:type => "button"} Help return someone's missing item!
             %input.form-control{:placeholder => "Search for...", :type => "text"}
         %table#cart.table
           %thead
             %tr
+              %br
+              %br
+              %br
+              %br
               %th
-              %br
-              %br
-              %br
+              %th.text-center Picture
+              %th.text-center Title
+              %th.text-center Description
+              %th.text-center Location
+              %th.text-center Category
+              %th.text-center Type
+              %th.text-center Color
+              %th.text-center Brand
+              %th.text-center Reward
           %tbody
-        
+          - @lost_items.each do |item|
+            %tr
+              %td.text-center.admin-image= image_tag(item.photo)
+              %td.text-center= item.title
+              %td.text-center= item.description
+              %td.text-center= item.location
+              %td.text-center= item.category
+              %td.text-center= item.kind
+              %td.text-center= item.color
+              %td.text-center= item.brand
+              %th.text-center.reward= item.reward
+      %br
+

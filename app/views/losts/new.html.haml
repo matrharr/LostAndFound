@@ -1,39 +1,49 @@
 .container-fluid
 .container
   .row
-    = form_for @lost, html: { class: 'form-horizontal center', id: 'lost-form' } do |f|
-      %img.macrabz-admin.center-block{:alt => 'Macrabz Emporium', :src => '/assets/lostit.png'}
-      .form-center
-        - if flash[:error]
-          #flash.error.text-center
-            = flash[:error]
-        .form-group
-          = f.label :picture, 'Photo:', class: 'col-lg-4 col-md-4 control-label'
-          .col-md-6
-            = f.text_field :picture, class: 'form-control'
-        .form-group
-          = f.label :title, 'Title:', class: 'col-lg-4 col-md-4 control-label'
-          .col-md-6
-            = f.text_field :title, class: 'form-control'
-        .form-group
-          = f.label :description, 'Description:', class: 'col-lg-4 col-md-4 control-label'
-          .col-md-6
-            = f.text_area :description, class: 'form-control'
-        .form-group
-          = f.label :location, 'Location:', class: 'col-lg-4 col-md-4 control-label'
-          .col-md-6
-            = f.text_field :location, class: 'form-control'
-        .form-group
-          = f.label :brand, 'Brand:', class: 'col-lg-4 col-md-4 control-label'
-          .col-md-6
-            = f.text_field :brand, class: 'form-control'
-        .form-group
-          = f.label :color, 'Colors:', class: 'col-lg-4 col-md-4 control-label'
-          .col-md-6
-            = f.text_field :color, class: 'form-control'
-        .form-group
-          = f.label :reward, 'Reward:', class: 'col-lg-4 col-md-4 control-label'
-          .col-md-6
-            = f.text_field :reward, class: 'form-control'
-        .col-md-12.update-button
-          = f.submit 'Add Lost Item', class: 'btn btn-primary btn-lg center-block'
+    .col-md-12.col-lg-12
+      = form_for :lost_item, html: { multipart: true, class: 'form-horizontal center', id: 'lost-form' }, url: { action: "create"} do |f|
+        %img.macrabz-admin.center-block{:alt => 'foundit', :src => '/assets/lostit.png'}
+        .form-center
+          - if flash[:error]
+            #flash.error.text-center
+              = flash[:error]
+          .form-group
+            = f.label :photo, 'Picture:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.file_field :photo, class: 'col-lg-4 control-label'
+          .form-group
+            = f.label :title, 'Title:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :title, class: 'form-control'
+          .form-group
+            = f.label :category, 'Category:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :category, class: 'form-control'
+          .form-group
+            = f.label :kind, 'Kind:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :kind, class: 'form-control'
+          .form-group
+            = f.label :color, 'Color(s):', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :color, class: 'form-control'
+          .form-group
+            = f.label :description, 'Description:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_area :description, class: 'form-control'
+          .form-group
+            = f.label :location, 'Location:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :location, class: 'form-control'
+          .form-group
+            = f.label :brand, 'Brand:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :brand, class: 'form-control'
+          .form-group
+            = f.label :reward, 'Reward:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.number_field :reward, class: 'form-control'
+          .col-md-12.update-button
+            = f.submit 'Add Lost Item', class: 'btn btn-primary btn-lg center-block'
+      %p
