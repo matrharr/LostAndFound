@@ -2,7 +2,7 @@
   .row
     .col-sm-12
       %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/founditlogo2.png'}
-      %h1.text-center.index-header 
+      %h1.text-center.index-header Found Items
       %form
         .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
           .input-group
@@ -12,12 +12,17 @@
         %table#cart.table
           %thead
             %tr
-              %th
-              %th 
-              %br
-              %br
-              %br
-              %br
+              %th.text-center Picture
+              %th.text-center Title
+              %th.text-center Description
+              %th.text-center Location
+              %th.text-center Brand
           %tbody
+          - @found_items.each do |item|
+            %tr
+              %td.text-center.admin-image= image_tag(item.photo)
+              %td.text-center= item.title
+              %td.text-center= item.description
+              %td.text-center= item.location
+              %td.text-center= item.brand
 
-  

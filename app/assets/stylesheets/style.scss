@@ -119,7 +119,7 @@ body {
 }
 
 td.admin-image img {
-  width: 50px;
+  width: 100px;
   height: auto;
 }
 
@@ -437,5 +437,9 @@ div.mutliSelect {
 
   .navbar {
     height: 50px;
+  }
+
+  .reward {
+    vertical-align: center;
   }
 }

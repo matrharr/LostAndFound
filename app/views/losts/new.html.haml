@@ -5,8 +5,7 @@
 .container
   .row
     .col-lg-12
-      = form_for @lost, html: { class: 'form-horizontal center', id: 'lost-form' } do |f|
-        %img.macrabz-admin.center-block{:alt => 'Macrabz Emporium', :src => '/assets/founditlogo2.png'}
+      = form_for :lost_item, html: { multipart: true, class: 'form-horizontal center', id: 'lost-form' }, url: { action: "create"} do |f|
         %h1.text-center.edit-header
           Add Lost Item
         .form-center
@@ -14,9 +13,9 @@
             #flash.error.text-center
               = flash[:error]
           .form-group
-            = f.label :picture, 'Photo:', class: 'col-lg-4 control-label'
+            = f.label :photo, 'Picture:', class: 'col-lg-4 control-label'
             .col-md-8
-              = f.text_field :picture, class: 'form-control'
+              = f.file_field :photo, class: 'col-lg-4 control-label'
           .form-group
             = f.label :title, 'Title:', class: 'col-lg-4 control-label'
             .col-md-8
@@ -34,18 +33,8 @@
             .col-md-8
               = f.text_field :brand, class: 'form-control'
           .form-group
-            = f.label :colors, 'Colors:', class: 'col-lg-4 control-label'
-            .col-md-8
-              .dropdown
-                %button#dropdownColors.btn.btn-default.dropdown-toggle{ 'aria-expanded' => true, 'aria-haspopup' => true, 'data-toggle' => 'dropdown', type: 'button' }
-                  %span.hida.caret
-                  %p.multiSel
-                %ul.dropdown-menu{'aria-labelledby' => 'dropdownCategories'}
-                  %ul.multiSelect{multiple: 'multiple'}
-                    %input{type: 'checkbox', value: 'orange'}
-          .form-group
             = f.label :reward, 'Reward:', class: 'col-lg-4 control-label'
             .col-md-8
-              = f.text_field :reward, class: 'form-control'
+              = f.number_field :reward, class: 'form-control'
           .col-md-12.update-button
-            = f.submit 'Add Found Item', class: 'btn btn-primary btn-lg center-block'
+            = f.submit 'Add Lost Item', class: 'btn btn-primary btn-lg center-block'
