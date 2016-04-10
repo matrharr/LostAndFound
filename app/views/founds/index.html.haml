@@ -1,8 +1,14 @@
 .container
   .row
     .col-sm-12
+      %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/founditlogo2.png'}
       %h1.text-center.index-header Found Items
       %form
+        .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
+          .input-group
+            %span.input-group-btn
+              %button.btn.btn-default{:type => "button"} Lets Find It!
+            %input.form-control{:placeholder => "Search for...", :type => "text"}
         %table#cart.table
           %thead
             %tr
@@ -19,3 +25,4 @@
               %td.text-center= item.description
               %td.text-center= item.location
               %td.text-center= item.brand
+
