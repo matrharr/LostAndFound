@@ -2,15 +2,17 @@
   .row
     .col-lg-12
       .col-lg-7
-        %h1.product-page-header.text-center= @lost.title
-        %p.product-page-desc.text-center= @lost.description
-        %p.product-page-desc.text-center= @lost.color
-        %p.product-page-desc.text-center= @lost.brand
-        %p.product-page-desc.text-center= @lost.location
-        %button.btn.btn-primary.btn-lg.center-block.add-product-button{:id => "add_#{@product.id}"} Contact
-      .col-lg-4
-        %h1.product-page-price.text-right
-          %sup.product-dollar $
-          = number_with_precision(@product.reward, precision: 2)
-        .product-page-image.push-right
-          = image_tag(@product.product_image)
+      = @score.each do |found_item, score|
+        %h1.product-page-header.text-center
+          %a{href:"/founds/#{found_item.id}"}= found_item.title
+        %p.product-page-header.text-center
+          Category
+          = found_item.category
+        %p.product-page-header.text-center
+          = found_item.kind
+        %p.product-page-header.text-center
+          = found_item.color
+        %p.product-page-header.text-center
+          = found_item.description
+        %p.product-page-desc.text-center
+          = score
