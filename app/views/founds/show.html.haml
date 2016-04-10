@@ -2,6 +2,7 @@
   .row
     .col-lg-12
       .col-lg-7
+        %h1.product-page-header.text-center= image_tag(@found_item.photo)
         %h1.product-page-header.text-center= @found_item.title
         %p.product-page-desc.text-center= @found_item.description
         %p.product-page-desc.text-center= @found_item.color
