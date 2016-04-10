@@ -5,18 +5,17 @@
 .container
   .row
     .col-lg-12
-      = form_for @found, html: { class: 'form-horizontal center', id: 'found-form' } do |f|
-        %img.macrabz-admin.center-block{:alt => 'Macrabz Emporium', :src => '/assets/amacrabz-f090c51c8aa06149fcc20cb1c563d771075b1e63998352663694b5c9bd55ffb4.svg'}
+      = form_for :founds, html: { multipart: true, class: 'form-horizontal center', id: 'found-form' }, url: { action: "create"} do |f|
         %h1.text-center.edit-header
-          Add Found
+          Add Found Item
         .form-center
           - if flash[:error]
             #flash.error.text-center
               = flash[:error]
           .form-group
-            = f.label :picture, 'Picture url:', class: 'col-lg-4 control-label'
+            = f.label :photo, 'Picture:', class: 'col-lg-4 control-label'
             .col-md-8
-              = f.text_field :picture, class: 'form-control'
+              = f.file_field :photo, class: 'col-lg-4 control-label'
           .form-group
             = f.label :title, 'Title:', class: 'col-lg-4 control-label'
             .col-md-8
@@ -33,15 +32,5 @@
             = f.label :brand, 'Brand:', class: 'col-lg-4 control-label'
             .col-md-8
               = f.text_field :brand, class: 'form-control'
-          .form-group
-            = f.label :colors, 'Colors:', class: 'col-lg-4 control-label'
-            .col-md-8
-              .dropdown
-                %button#dropdownColors.btn.btn-default.dropdown-toggle{ 'aria-expanded' => true, 'aria-haspopup' => true, 'data-toggle' => 'dropdown', type: 'button' }
-                  %span.hida.caret
-                  %p.multiSel
-                %ul.dropdown-menu{'aria-labelledby' => 'dropdownCategories'}
-                  %ul.multiSelect{multiple: 'multiple'}
-                    %input{type: 'checkbox', value: "yellow"}
           .col-md-12.update-button
             = f.submit 'Add Found Item', class: 'btn btn-primary btn-lg center-block'

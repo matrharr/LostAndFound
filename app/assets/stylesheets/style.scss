@@ -1,3 +1,10 @@
+.navbar-brand img {
+  width: 170px;
+  height: auto;
+  margin-left: 30px;
+}
+
+
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -57,7 +64,7 @@ body {
 
 .navbar-default {
   border: none;
-  background-color: rgba(255, 255, 255, .98)
+  background-color: #f8f8f8
 }
 
 .product-button {
@@ -71,8 +78,8 @@ body {
 }
 
 .btn-primary, .btn-primary-2 {
-  background-color: #e58c33;
-  border-color: #f19833;
+  background-color: #437ebb;
+  border-color: #366ca5;
 }
 
 .btn-primary:hover,
@@ -82,15 +89,15 @@ body {
 .btn-primary-2:active:hover,
 .btn-primary-2.active:hover {
   color: #ffffff;
-  background-color: #f19833;
-  border-color: #e58c33;
+  background-color: #3a91eb;
+  border-color: #437ebb;
 }
 
 .btn-primary:active,
 .btn-primary.active {
   color: #ffffff;
-  background-color: #f19833;
-  border-color: #e58c33;
+  background-color: #3a91eb;
+  border-color: #437ebb;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -112,7 +119,7 @@ body {
 }
 
 td.admin-image img {
-  width: 50px;
+  width: 100px;
   height: auto;
 }
 
@@ -155,7 +162,7 @@ td.admin-image img {
 
 .product-box {
   padding: 10px 20px 20px;
-  border: 1px solid #e4e4e4;
+  border: 1px solid #437ebb;
   border-radius: 5px;
   height: 465px;
 }
@@ -430,5 +437,9 @@ div.mutliSelect {
 
   .navbar {
     height: 50px;
+  }
+
+  .reward {
+    vertical-align: center;
   }
 }
