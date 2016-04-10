@@ -2,20 +2,28 @@
   .row
     .col-sm-12
       %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/founditlogo2.png'}
-      %h1.text-center.index-header Found Items
+      %br
+      %br
       %form{action:"/founds/search_results"}
         .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
           .input-group
             %span.input-group-btn
-              %button.btn.btn-default{:type => "submit"} Lets Find It!
+              %button.btn.btn-default{:type => "submit"} Let's find your missing item!
             %input.form-control{:placeholder => "Search for...", :type => "text", name:"search"}
         %table#cart.table
           %thead
             %tr
+              %br
+              %br
+              %br
+              %br
               %th.text-center Picture
               %th.text-center Title
               %th.text-center Description
               %th.text-center Location
+              %th.text-center Category
+              %th.text-center Type
+              %th.text-center Color
               %th.text-center Brand
           %tbody
           - @found_items.each do |item|
@@ -24,5 +32,8 @@
               %td.text-center= item.title
               %td.text-center= item.description
               %td.text-center= item.location
+              %td.text-center= item.category
+              %td.text-center= item.kind
+              %td.text-center= item.color
               %td.text-center= item.brand
 

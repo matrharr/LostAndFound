@@ -21,15 +21,19 @@
             %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "#", :role => "button"}
               Lost
               %b.caret
-            
             %ul.dropdown-menu{ :role => 'menu'}
               %li
                 = link_to 'View all Lost Items', losts_path
-                = link_to 'Add a Lost Item', losts_path
-            / %ul.dropdown-menu{ :role => 'menu'}
-            /   %li
-            /     = link_to 'Lost', losts_path
-            /     = link_to 'Found', founds_path
+                = link_to 'Add a Lost Item', new_lost_path
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Found
+              %b.caret
+            %ul.dropdown-menu{ :role => 'menu'}
+              %li
+                = link_to 'View all Found Items', founds_path
+                = link_to 'Add a Found Item', new_found_path
         = link_to image_tag('/assets/search2.png'), losts_path, class: 'navbar-search slideout-menu-toggle'
   %body
     .container
@@ -41,6 +45,44 @@
     .slideout-menu
       %h3
         .statisticstitle
-          Search
-
-    
+      .row
+        .col-lg-8.col-lg-offset-2
+          %form
+            %input.form-control{:placeholder => "Item", :type => "text"}
+            %br
+            %input.form-control{:placeholder => "Description", :type => "text"}
+            %br
+            %input.form-control{:placeholder => "Location", :type => "text"}
+            %br
+            %input.form-control{:placeholder => "Date", :type => "text"}
+            %br
+            %ul.nav.navbar-nav
+              %li.dropdown
+                %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  Color
+                  %b.caret
+                %ul.dropdown-menu{ :role => 'menu'}
+                  %li
+                    Yellow
+                  %li
+                    Orange
+                  %li
+                    Green
+                  %li
+                    Blue
+            %br
+            %br
+            %br
+              %ul.nav.navbar-nav
+                %li.dropdown
+                  %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                    Lost or Found?
+                    %b.caret
+                  %ul.dropdown-menu{ :role => 'menu'}
+                    %li
+                      Lost
+                    %li
+                      Found
+            %br
+            %button.update-button.btn.btn-primary.btn-lg.center-block
+              Search
