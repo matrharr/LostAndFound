@@ -13,23 +13,35 @@
             #flash.error.text-center
               = flash[:error]
           .form-group
-            = f.label :photo, 'Picture:', class: 'col-lg-4 control-label'
+            = f.label :photo, 'Picture:', class: 'col-lg-2 control-label'
             .col-md-8
-              = f.file_field :photo, class: 'col-lg-4 control-label'
+              = f.file_field :photo, class: 'col-lg-2 control-label'
           .form-group
-            = f.label :title, 'Title:', class: 'col-lg-4 control-label'
+            = f.label :title, 'Title:', class: 'col-lg-2 control-label'
             .col-md-8
               = f.text_field :title, class: 'form-control'
           .form-group
-            = f.label :description, 'Description:', class: 'col-lg-4 control-label'
+            = f.label :category, 'Category:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :category, class: 'form-control'
+          .form-group
+            = f.label :kind, 'Kind:', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :kind, class: 'form-control'
+          .form-group
+            = f.label :color, 'Color(s):', class: 'col-lg-2 control-label'
+            .col-md-8
+              = f.text_field :color, class: 'form-control'
+          .form-group
+            = f.label :description, 'Description:', class: 'col-lg-2 control-label'
             .col-md-8
               = f.text_area :description, class: 'form-control'
           .form-group
-            = f.label :location, 'Location:', class: 'col-lg-4 control-label'
+            = f.label :location, 'Location:', class: 'col-lg-2 control-label'
             .col-md-8
               = f.text_field :location, class: 'form-control'
           .form-group
-            = f.label :brand, 'Brand:', class: 'col-lg-4 control-label'
+            = f.label :brand, 'Brand:', class: 'col-lg-2 control-label'
             .col-md-8
               = f.text_field :brand, class: 'form-control'
           .col-md-12.update-button
