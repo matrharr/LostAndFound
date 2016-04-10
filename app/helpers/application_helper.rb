@@ -1,6 +1,7 @@
 module ApplicationHelper
 
   def clean_description(string)
+  string = string.downcase
   conjunctions = ["for", "and","so", "nor", "but", "or", "yet" ]
   useless_words = ["he", "she", "him ","it", "her", "them", "my", "his", "their", "at", "it's", "on" ,"with", "like", "as", "to", "also", "then", "again" ]
 

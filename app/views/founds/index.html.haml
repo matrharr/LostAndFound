@@ -3,12 +3,12 @@
     .col-sm-12
       %img.checkout-image.center-block{:alt => 'foundit', :src => '/assets/founditlogo2.png'}
       %h1.text-center.index-header Found Items
-      %form
+      %form{action:"/founds/search_results"}
         .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
           .input-group
             %span.input-group-btn
-              %button.btn.btn-default{:type => "button"} Lets Find It!
-            %input.form-control{:placeholder => "Search for...", :type => "text"}
+              %button.btn.btn-default{:type => "submit"} Lets Find It!
+            %input.form-control{:placeholder => "Search for...", :type => "text", name:"search"}
         %table#cart.table
           %thead
             %tr

@@ -13,12 +13,31 @@ colors = ["red", "blue", "green", "black", "white"]
      category: "Clothing",
      kind: (kinds[(rand(0..4))]),
      color: (colors[(rand(0..4))]),
-     description: Faker::Lorem.sentence(8)
+     description: Faker::Lorem.sentence(8),
+     location: Faker::Address.street_address
       )
 end
 
 
+Found.create(
+   user_id: 4,
+   title: "Found a jacket",
+   brand: "Calvin Klein",
+   category: "Clothing",
+   kind: "Coat",
+   color: "Black",
+   description: "Found black Calvin Klein jacket at Folsom.",
+   location: "Folsom St"
+  )
 
+Lost.create(
+  title: Faker::Lorem.word,
+  brand: "Calvin Klein",
+  category: "Clothing",
+  kind: "Jacket",
+  color: "Black",
+  description: "I lost my jacket between 4th and Folsom. It's a black Calvin Klein with a silver zipper."
+  )
 
 
 
