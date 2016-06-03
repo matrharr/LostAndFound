@@ -17,7 +17,6 @@
               %br
               %br
               %br
-              %th.text-center Picture
               %th.text-center Title
               %th.text-center Description
               %th.text-center Location
@@ -28,7 +27,6 @@
           %tbody
           - @found_items.each do |item|
             %tr
-              %td.text-center.admin-image= image_tag(item.photo)
               %td.text-center= item.title
               %td.text-center= item.description
               %td.text-center= item.location

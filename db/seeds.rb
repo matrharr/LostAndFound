@@ -9,12 +9,12 @@ colors = ["red", "blue", "green", "black", "white"]
 30.times do
   Found.create(
      user_id: rand(1..10),
-     title:Faker::Lorem.word,
+     title:Faker::Commerce.product_name,
      brand: (brands[(rand(0..3))]),
      category: "Clothing",
      kind: (kinds[(rand(0..4))]),
      color: (colors[(rand(0..4))]),
-     description: Faker::Lorem.sentence(8),
+     description: Faker::Company.catch_phrase,
      location: Faker::Address.street_address
       )
 end
