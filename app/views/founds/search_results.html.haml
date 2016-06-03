@@ -12,7 +12,7 @@
         %table#cart.table
           %thead
             %tr
-              %th.text-center Picture
+
               %th.text-center Title
               %th.text-center Score
               %th.text-center Description
@@ -22,7 +22,7 @@
           %tbody
           - @matches.each do |item, score|
             %tr
-              %td.text-center.admin-image= image_tag(item.photo)
+
               %td.text-center
                 %a{href:"/founds/#{item.id}"}= item.title
                 %td.text-center= score.round(2)
